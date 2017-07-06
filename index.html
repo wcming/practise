@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .orange{
+            color: orange;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="con1">
+        <input type="text" ng-model="name">
+        <p>你的名字是 {{name}}</p>
+    </div>
+
+    <div ng-controller="con2">
+        <input type="text" ng-model="name">
+        <p>{{name}} 的年龄是 {{10+15}}</p>
+    </div>
+
+    <div ng-controller="con3">
+        <div ng-repeat="arr in arrs">
+            姓名：{{arr.firstName+arr.lastName}}
+            性别：{{arr.sex}}
+        </div>
+    </div>
+
+    <div ng-controller="con4">
+        <p ng-bind="action"></p>
+    </div>
+
+    <div ng-controller="con5">
+        <p ng-class="file">saddasdsasdasdas</p>
+        <p ng-class="{true:'orange',false:'red'}[files]">saddasdsasdasdas</p>
+    </div>
+
+    <div ng-controller="con6">
+        显示/隐藏: <input type="checkbox" ng-model="myVar" ng-init="myVar = true">
+        <div ng-if="myVar">
+            <h1>Welcome</h1>
+        </div>
+    </div>
+
+    <div ng-controller="con7">
+        <p ng-click="showOrHide()">显示/隐藏</p>
+        <div ng-show=show>
+            <h1>Welcome</h1>
+        </div>
+    </div>
+
+    <div ng-controller="con8">
+        <p ng-click="hideOrShow()">显示/隐藏</p>
+        <div ng-show=hide>
+            <h1>Welcome</h1>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
